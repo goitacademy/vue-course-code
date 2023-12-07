@@ -6,6 +6,10 @@ import FavoritePlaces from './components/FavoritePlaces/FavoritePlaces.vue'
 <template>
   <!-- <HomepageView /> -->
   <div class="bg-white h-screen w-[400px]">
-    <FavoritePlaces />
+    <FavoritePlaces>
+      <div>THis is super slot</div>
+      <template v-slot:label>This is label</template>
+      <template #list>This is list</template>
+    </FavoritePlaces>
   </div>
 </template>
