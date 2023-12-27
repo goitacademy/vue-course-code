@@ -12,11 +12,7 @@ const changeButtonVariant = () => {
 </script>
 
 <template>
-  <div
-    class="px-6"
-    @click.self.once="() => console.log('click1')"
-    @keydown.alt.enter="() => console.log('alt pressed')"
-  >
+  <div class="px-6">
     <div class="text-gray mb-4" @click.stop="() => console.log('click2')">Додані маркери</div>
     <div class="py-5">
       <IInput label="Some label" />
