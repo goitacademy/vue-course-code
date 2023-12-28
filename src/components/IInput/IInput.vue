@@ -10,6 +10,10 @@ const props = defineProps({
   }
 })
 
+defineOptions({
+  inheritAttrs: false
+})
+
 const text = ref('')
 
 const changeValue = (event) => {
@@ -23,8 +27,7 @@ const changeValue = (event) => {
       <span class="block text-xs px-3 mb-2">{{ props.label }}</span>
       <input
         class="w-full text-sm rounded-[4px] border-[#eaeaea] border-[1px] py-2 px-3 focus:outline-primary"
-        :type="props.type"
-        :placeholder="props.placeholder"
+        v-bind="{ ...$props, ...$attrs }"
         @input="changeValue"
       />
     </label>
