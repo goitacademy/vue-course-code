@@ -10,5 +10,5 @@ import RegistrationForm from './components/Auth/RegistrationForm/RegistrationFor
   <!-- <div class="bg-white h-screen w-[400px]">
     <FavoritePlaces />
   </div> -->
-  <RegistrationForm />
+  <RegistrationForm @submit="console.log" />
 </template>
