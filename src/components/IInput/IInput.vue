@@ -26,6 +26,13 @@ const emit = defineEmits(['update:modelValue'])
         :value="modelValue"
         @input="emit('update:modelValue', $event.target.value)"
       />
+      <!-- <textarea
+        rows="3"
+        class="w-full text-sm rounded-[4px] border-[#eaeaea] border-[1px] py-2 px-3 focus:outline-primary resize-none"
+        v-bind="{ ...$props, ...$attrs }"
+        :value="modelValue"
+        @input="emit('update:modelValue', $event.target.value)"
+      ></textarea> -->
     </label>
   </div>
 </template>
