@@ -1,4 +1,5 @@
 <script setup>
+import EditPlaceModal from '../EditPlaceModal/EditPlaceModal.vue'
 import FavoritePlace from '../FavoritePlace/FavoritePlace.vue'
 import IButton from '../IButton/IButton.vue'
 
@@ -32,6 +33,8 @@ const emit = defineEmits(['place-clicked', 'create'])
         :is-active="place.id === props.activeId"
         @click="emit('place-clicked', place.id)"
       />
+
+      <EditPlaceModal :is-open="true" />
     </slot>
 
     <slot></slot>
