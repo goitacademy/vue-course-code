@@ -1,5 +1,20 @@
 <script setup>
+import { onMounted } from 'vue'
 import UserIcon from './UserIcon.vue'
+import { useMutation } from '../../composables/useMutation'
+import { getUserInfo } from '../../api/user'
+
+const {
+  data: userInfo,
+  mutation: getUser,
+  isLoading
+} = useMutation({
+  mutationFn: () => getUserInfo()
+})
+
+onMounted(() => {
+  getUser()
+})
 </script>
 
 <template>
@@ -9,6 +24,7 @@ import UserIcon from './UserIcon.vue'
     <div class="w-10 h-10 flex items-center justify-center rounded-full color-primary bg-primary">
       <UserIcon class="text-white" />
     </div>
-    <span>User name</span>
+    <span v-if="isLoading">Loading...</span>
+    <span v-if="userInfo">{{ userInfo.data.name }}</span>
   </div>
 </template>
