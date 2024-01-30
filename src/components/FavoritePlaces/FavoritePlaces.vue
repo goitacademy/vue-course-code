@@ -6,6 +6,7 @@ import { useModal } from '../../composables/useModal'
 import { computed, ref } from 'vue'
 import { useMutation } from '../../composables/useMutation'
 import { updateFavoritePlace } from '../../api/favorite-places'
+import ConfirmationModal from '../ConfirmationModal/ConfirmationModal.vue'
 
 const props = defineProps({
   items: {
@@ -66,6 +67,8 @@ const handleSubmit = (formData) => {
         @close="closeEditModal"
         @submit="handleSubmit"
       />
+
+      <ConfirmationModal :is-open="true" title="Ви дійсно хочете видалити улюблене місце?" />
     </slot>
 
     <slot></slot>
